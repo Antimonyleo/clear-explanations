@@ -9,17 +9,23 @@ A compact skill for explaining complex concepts and projects across Codex, Claud
 
 ## Install
 
-Clone once, then register it in either or both tools:
+Clone once, then register it locally in Codex and Claude Code. Existing registration paths are skipped:
 
 ```sh
 git clone https://github.com/Antimonyleo/clear-explanations.git
 cd clear-explanations
-mkdir -p "$HOME/.agents/skills" "$HOME/.claude/skills"
-ln -s "$PWD" "$HOME/.agents/skills/clear-explanations"
-ln -s "$PWD" "$HOME/.claude/skills/clear-explanations"
+for skill_root in "$HOME/.agents/skills" "$HOME/.claude/skills"; do
+  mkdir -p "$skill_root"
+  skill_target="$skill_root/clear-explanations"
+  if [ -e "$skill_target" ] || [ -L "$skill_target" ]; then
+    echo "Already exists: $skill_target"
+  else
+    ln -s "$PWD" "$skill_target"
+  fi
+done
 ```
 
-The links share one source. If a target already exists, inspect it before replacing it. Run `git pull` inside the cloned folder to update.
+The links share one source. Inspect skipped paths before changing them. Run `git pull` inside the cloned folder to update.
 
 ## Use
 

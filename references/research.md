@@ -27,7 +27,9 @@ For very complex concepts or projects, the skill requires a visual overview when
 | [Vasconcelos et al., 2023](https://arxiv.org/abs/2212.06823), five studies, N=731 | Verification costs influenced checking of simulated AI advice → make decisive evidence inexpensive to inspect. General assistant applications are an inference from maze tasks. |
 | [Amershi et al., 2019](https://www.microsoft.com/en-us/research/wp-content/uploads/2019/01/Guidelines-for-Human-AI-Interaction-camera-ready.pdf), guidelines evaluated with 49 practitioners and 20 products | Communicate capability and uncertainty; support correction and dismissal → preserve reader control. Practitioner validation is not a causal performance estimate. |
 | [Morita et al., 2025](https://arxiv.org/abs/2503.07463), GenAIReading study, N=24 | Generated summaries and images improved tested post-reading scores → content-aligned supplements are promising. Small sample and bundled intervention do not isolate the useful component. |
+| [August et al., 2024](https://arxiv.org/abs/2403.04979), three within-subject studies | Simpler summaries helped unfamiliar readers; familiar readers sometimes overlooked details in overly plain summaries → calibrate familiarity and depth. Scientific-summary tasks do not establish universal benefits. |
 | [WCAG 2.2](https://www.w3.org/TR/WCAG22/), normative standard | Text alternatives, structure, keyboard access, captions, color-independent meaning, and motion control → include accessible ways to read and operate artifacts. Partial design checks do not establish full conformance. |
+| [W3C complex-image guidance](https://www.w3.org/WAI/tutorials/images/complex/), accessibility guidance | Complex visuals need text conveying essential information → apply equivalents across visual formats. A short takeaway may be insufficient; this is guidance, not an effectiveness trial. |
 
 ## Implementation choices
 
@@ -42,6 +44,8 @@ These are proposed checks, not completed model experiments:
 
 - Simple question: answer directly; avoid unnecessary artifacts.
 - Complex architecture: show accurate components, boundaries, and relationships.
+- Novice and expert readers: adapt prerequisites and depth while retaining important limits; preserve the requested language.
+- Visual explanations: make essential relationships and values available in text, including outside HTML.
 - Benchmark review: preserve units, denominators, failures, and missing runs.
 - What-if plan: expose defaults and assumptions; provide reset; label modeled outcomes.
 - Temporal process: use persistent keyframes or controlled playback, with narration alternatives.
