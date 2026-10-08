@@ -1,47 +1,48 @@
 # Clear explanations
 
-A compact skill for explaining complex concepts and projects across Codex, Claude Code, and other AI harnesses.
+An agent skill that makes AI answers easier to read, check, and act on.
 
-- Write clear, precise prose inspired by ASD-STE100.
-- Include a visual overview for very complex topics: a schematic, architecture map, flow, or timeline.
-- Use HTML for layered explanations or useful exploration; use animation when motion explains the idea.
-- Keep evidence, assumptions, and important limits easy to find.
+The idea comes from Andrej Karpathy: as models do more of the work, we spend more time understanding their output. He suggests asking for plain controlled writing (ASD-STE100), then diagrams, then HTML pages, then explainer videos.
+
+## What it does
+
+- Writes answers first, in plain short sentences inspired by ASD-STE100.
+- Adds a diagram, page, or video only when it saves you effort.
+- Marks what is sourced, assumed, or unchecked.
+- Skips one-line answers, routine edits, and documents like papers, grants, and cover letters.
 
 ## Install
 
-Clone once, then register it locally in Codex and Claude Code. Existing registration paths are skipped:
+Clone once:
 
 ```sh
 git clone https://github.com/Antimonyleo/clear-explanations.git
-cd clear-explanations
-for skill_root in "$HOME/.agents/skills" "$HOME/.claude/skills"; do
-  mkdir -p "$skill_root"
-  skill_target="$skill_root/clear-explanations"
-  if [ -e "$skill_target" ] || [ -L "$skill_target" ]; then
-    echo "Already exists: $skill_target"
-  else
-    ln -s "$PWD" "$skill_target"
-  fi
-done
 ```
 
-The links share one source. Inspect skipped paths before changing them. Run `git pull` inside the cloned folder to update.
+Then link or copy the folder into your tool's skills directory:
+
+| Tool | Skills folder |
+| --- | --- |
+| Claude Code | `~/.claude/skills/clear-explanations` |
+| Codex | `~/.agents/skills/clear-explanations` |
+| Other Agent Skills tools | Their skills folder (see the [spec](https://agentskills.io/specification)) |
+
+```sh
+ln -s "$PWD/clear-explanations" ~/.claude/skills/clear-explanations
+```
+
+Update with `git pull`. If your tool has no skill support, paste `SKILL.md` into its custom instructions or system prompt.
+
+## Make it apply everywhere (recommended)
+
+Skills load only when the model judges them relevant, so short replies may skip it. Add this line to your global `CLAUDE.md` (Claude Code) or `AGENTS.md` (Codex and others). In chat apps, paste it into custom instructions.
+
+```text
+Write for a human reader: answer first, then limits and reasons; plain words, short active sentences (about 20-25 words), one word per meaning, no idioms; define terms on first use; paragraphs by default, lists for steps, tables for exact values; one concrete example for abstract ideas; no filler or closing recap. Match length to the question. Check what the request leaves out; never fill a gap with invented numbers, names, sources, or events. Say unknown, state an assumption, or ask one short question. For explanations, plans, comparisons, and overviews, also use the clear-explanations skill. Skip for one-line answers and for papers, grants, and other documents for submission.
+```
 
 ## Use
 
-| Tool | Prompt |
-| --- | --- |
-| Codex | `$clear-explanations Explain this project's architecture.` |
-| Claude Code | `/clear-explanations Explain this project's architecture.` |
+Ask normally, or call it by name: `/clear-explanations` in Claude Code, `$clear-explanations` in Codex.
 
-Both tools can also select installed skills automatically. Other [Agent Skills](https://agentskills.io/specification) harnesses can load this folder from their skills directory. Without skill support, supply [SKILL.md](SKILL.md) as task instructions.
-
-No dependencies are required. Available tools determine rendering options; the skill includes a text/static fallback.
-
-For consistent selection across projects, add this optional line to your global `AGENTS.md` or `CLAUDE.md`:
-
-```text
-Use clear-explanations for complex explanations and project overviews.
-```
-
-[Research and rationale](references/research.md) · [Codex setup](https://learn.chatgpt.com/docs/build-skills) · [Claude Code setup](https://code.claude.com/docs/en/skills)
+[Research and rationale](references/research.md)

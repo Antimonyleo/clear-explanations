@@ -1,6 +1,8 @@
 # Research and rationale
 
-Reviewed 2026-10-02. This synthesis extends the user-supplied Karpathy passage with primary research and official standards. It is a selected review, not a systematic review. The complete skill has not been evaluated experimentally across models or harnesses.
+Reviewed 2026-10-02; skill text revised 2026-10-07 after a small subagent test (four prompts, one model, no controls). This synthesis extends the user-supplied Karpathy passage with primary research and official standards. It is a selected review, not a systematic review. The complete skill has not been evaluated experimentally across models or harnesses.
+
+Scope: the skill covers explanations, summaries, comparisons, plans, and reports for human readers. It excludes drafting papers, grants, and other scientific publications, and one-line answers and routine edits.
 
 ## Main findings
 
@@ -9,13 +11,13 @@ Reviewed 2026-10-02. This synthesis extends the user-supplied Karpathy passage w
 3. **Make checking easy.** Understanding a model and detecting its errors are different outcomes. Keep sources, assumptions, counterevidence, units, and missing data close to the claims they affect.
 4. **Keep the reader in control.** Provide usable defaults, reversible interactions, accessible alternatives, and pacing controls. Richer output adds value when it reduces effort or answers another question.
 
-For very complex concepts or projects, the skill requires a visual overview when the requested format and available tools permit it. This is a practical design choice, not a measured complexity threshold. HTML is useful for layered explanations, coordinated views, and what-if exploration. A schematic can be enough for a single relationship or process.
+For complex concepts or projects, the skill adds a simple overview diagram when it saves the reader effort and the requested format and available tools permit it. This is a practical design choice, not a measured complexity threshold. HTML is useful for layered explanations, coordinated views, and what-if exploration. A schematic can be enough for a single relationship or process.
 
 ## Evidence and limits
 
 | Source | Finding or guidance → implication; limit |
 | --- | --- |
-| [ASD-STE100 FAQ](https://www.asd-ste100.org/STE_faq.html), official guidance | Controlled vocabulary and writing rules reduce ambiguity → use concrete wording and consistent terms. “80% STE” is informal style guidance, not measurable compliance; strict STE requires the standard. |
+| [ASD-STE100 FAQ](https://www.asd-ste100.org/STE_faq.html), official guidance | Controlled vocabulary and writing rules reduce ambiguity → use concrete wording and consistent terms. STE-inspired guidance does not establish compliance; strict STE requires the standard. |
 | [Larkin & Simon, 1987](https://iiif.library.cmu.edu/file/Simon_box00068_fld05250_bdl0001_doc0001/Simon_box00068_fld05250_bdl0001_doc0001.pdf), computational analysis | Spatial organization can reduce search and aid inference → expose relevant relationships and place labels nearby. Benefits depend on representation and task. |
 | [Shneiderman, 1996](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf), visualization taxonomy | Overview, filtering, relationships, and detail are distinct tasks → give controls identifiable purposes. A design framework, not a randomized comparison. |
 | [Segel & Heer, 2010](https://scivis.github.io/courses/visualstorytelling/segel_heer_2010.pdf), narrative analysis | Guided narratives can lead into exploration → start with an informative default. Descriptive examples do not establish a universally optimal layout. |
@@ -33,10 +35,10 @@ For very complex concepts or projects, the skill requires a visual overview when
 
 ## Implementation choices
 
-- **Relaxed STE-inspired prose:** preserve technical precision and natural sentence variety. Do not claim standard compliance or replace necessary domain terms to satisfy an arbitrary word limit.
+- **Relaxed STE-inspired prose:** the skill lists concrete guidelines (about 20 words per instruction sentence, 25 per descriptive sentence, six sentences per paragraph, three-noun limit, one word per meaning). Preserve technical precision and natural sentence variety. Do not claim standard compliance or replace necessary domain terms to satisfy a word limit.
 - **Standalone HTML:** without an existing stack, a self-contained file lowers opening and setup effort. This is an engineering convention. Reuse the user's stack when appropriate.
 - **Honest scenarios:** label hypothetical examples and simulations; expose assumptions. A working slider does not validate the underlying model. Never invent measurements or confidence scores.
-- **Portable packaging:** [Agent Skills](https://agentskills.io/specification) defines `SKILL.md` with `name` and `description`. This package uses those fields, relative references, and no provider-specific tools. [Codex](https://learn.chatgpt.com/docs/build-skills) and [Claude Code](https://code.claude.com/docs/en/skills) document distinct discovery paths and symlink support. Other harnesses need compatible discovery or explicit loading. Rendering capabilities vary.
+- **Portable packaging:** [Agent Skills](https://agentskills.io/specification) defines `SKILL.md` with `name` and `description`. This package uses those fields, relative references, and no provider-specific tools. [Codex](https://learn.chatgpt.com/docs/build-skills) and [Claude Code](https://code.claude.com/docs/en/skills) document distinct discovery paths; symlink installs are a local convention not verified here. Other harnesses need compatible discovery or explicit loading. Rendering capabilities vary.
 
 ## Evaluation ideas
 

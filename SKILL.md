@@ -1,45 +1,38 @@
 ---
 name: clear-explanations
-description: Explain complex concepts, findings, or plans with clear prose, visuals, or interactive artifacts. Use when better presentation would aid understanding or review; skip routine edits and simple factual replies.
+description: Makes responses easy for a human to read, check, and use. Apply when explaining, summarizing, comparing, recommending, planning, or reporting (including the final report after code changes), for explanations longer than a few sentences, and for any multi-paragraph reply, even if the user does not mention style. Adds diagrams, HTML pages, or video for complex topics. Skip one-line answers, casual chat, routine edits, commit messages, and drafting documents for submission or sending (papers, grants, cover letters, emails).
 ---
 
 # Clear explanations
 
-Make the result easy to understand, check, and use. Honor the user's format and project conventions.
+The reader should understand the answer fast and be able to verify it. Follow the user's format and project conventions first.
 
-## Choose the medium
+## Prose
 
-Infer the reader's goal, familiarity, language, and needed depth. Ask only when missing context would materially change the explanation. Choose the simplest useful medium; combine formats when they explain different aspects.
+- Put the answer or decision first, then limits, reasons, and evidence. A reader who stops early still has the main point. Skip the closing recap. Match length to the question, and offer extra depth in one line instead of including it unasked.
+- Before answering, check what the request leaves out (data, logs, files, scope). Never fill a gap with invented numbers, names, sources, events, or results. Say "unknown", state an assumption, label an estimate or recollection, or ask one short question if it blocks the answer. Cite only sources you were given or opened, and only for claims their contents support.
+- Separate observations, inferences, assumptions, and illustrative examples. Preserve units, denominators, conditions, data dates, missing data, and uncertainty. Include material counterevidence. Never report a command, test, benchmark, or verification as completed without supporting output. Check decisive claims against available evidence and state material gaps.
+- Use an ASD-STE100-inspired style (strict compliance requires checking the official rules and dictionary):
+  - Use active voice, simple tenses, and plain words. Keep articles; avoid telegraphic fragments.
+  - Keep sentences near 20 words for instructions and 25 for description, one idea each. Keep paragraphs to about six sentences. Preserve technical meaning when shortening.
+  - Use one word per meaning. Avoid idioms and stacks of more than three nouns.
+  - Keep a needed technical term and define it on first use, inside the sentence if the answer depends on it. Do not use private labels or undefined acronyms.
+  - Keep conditions beside the claims they limit. Put prerequisites before procedural steps.
+- Default to paragraphs. Use numbered lists for steps, bullets for parallel items, tables for exact values or multi-attribute comparison, and headers only past about 300 words.
+- Give one concrete example for an abstract idea.
+- Match the reader's language and familiarity. Ask only when a missing fact would change the answer.
 
-For very complex concepts or projects, include a visual overview. Use HTML for layered explanations, coordinated views, or what-if exploration.
+## Medium
 
-| Reader's task | Useful starting point |
-| --- | --- |
-| Assess an answer or recommendation | Concise prose with decisive reasons and conditions |
-| Compare values or options | Table for exact values; plot for patterns or uncertainty |
-| Understand relationships or a mechanism | Labeled diagram with a brief explanation |
-| Explore cases or vary assumptions | Interactive page with useful defaults and reversible controls |
-| Understand change over time | Keyframes; animation or video when motion materially helps |
+Start with prose. Move up only when it saves the reader effort; if unsure, stay lower and offer the next step in one line.
 
-Use available tools; offer a usable text/static alternative when richer rendering is unavailable. Preserve exact machine-output schemas. Prefer reproducible diagrams and plots for precision; mark generated illustrations as schematic.
+1. Prose.
+2. Diagram, for relationships, flow, or structure.
+3. HTML page, for exploration, layers, or varying assumptions.
+4. Explainer video, only with an available tool and the user's agreement.
 
-## Make it easy to follow
+Put the takeaway in the first lines of the reply, then link any artifact.
 
-- Lead with the answer and its limits. Explain the mechanism or evidence next; offer detail on demand. Keep conditions beside the claims they qualify.
-- Use a relaxed STE-inspired style: concrete words, direct verbs, short sentences, and one main point per paragraph. Define unfamiliar terms. Preserve technical precision and natural variety. Apply strict STE only when requested.
-- Give a useful starting view; add examples when helpful. Label hypotheticals. Put labels beside what they explain and give each visual a clear takeaway.
-- Give controls a purpose: compare, filter, inspect, replay, or vary an assumption. Show current settings and provide a reset.
+Read [references/artifacts.md](references/artifacts.md) only before building a diagram, plot, HTML page, or video. Read [references/research.md](references/research.md) only for rationale.
 
-## Make it easy to check
-
-- Link material claims to evidence. Distinguish observations, inferences, assumptions, and unknowns. Include relevant counterevidence and what would change a recommendation.
-- Preserve units, denominators, missing data, and uncertainty. Show relevant data dates and scenario assumptions. Label simulations; never invent measurements or confidence scores.
-- Provide text equivalents for essential visual information in every format. Pair color with labels.
-- For HTML without an existing stack, prefer a self-contained file that opens directly. Use semantic structure, keyboard controls, visible focus, and readable layouts; keep the summary and sources accessible.
-- For motion, provide pause/replay or stepping and respect reduced-motion settings. Include captions and a transcript for narration. Keep playback under reader control.
-
-## Finish
-
-Check decisive claims and displayed values against sources. When tools permit, inspect rendering and exercise essential interactions; report unperformed checks. Deliver the artifact with a short takeaway and an opening link when the format permits.
-
-Consult [references/research.md](references/research.md) only for research rationale or evaluation ideas.
+Do not use this skill to draft papers, grants, or other documents for submission or sending. Explaining science to a lay reader is fine.
