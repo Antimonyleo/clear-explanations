@@ -49,11 +49,11 @@ Run this once, with only one language file. When updating, replace the existing 
 
 ### Context cost
 
-The core is a fixed instruction block: 119 words for English or 160 for Chinese explanations, both written in English. The skill entrypoint is 534 words including metadata. These are word counts, not tokenizer measurements. The skill does not install hooks, append reminders each turn, or automatically load the test results and terminal preview. Codex discovers a skill's name and description first and loads its full instructions when selected; see the [official skill documentation](https://learn.chatgpt.com/docs/build-skills). Codex builds its `AGENTS.md` instruction chain once per run; see [instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+The core is a fixed instruction block: 119 words for English or 160 for Chinese explanations, both written in English. The skill entrypoint is 535 words including metadata. These are word counts, not tokenizer measurements. The skill does not install hooks, append reminders each turn, or automatically load the test results and terminal preview. Codex discovers a skill's name and description first and loads its full instructions when selected; see the [official skill documentation](https://learn.chatgpt.com/docs/build-skills). Codex builds its `AGENTS.md` instruction chain once per run; see [instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
 This supports a small fixed instruction cost under normal loading, not a guarantee of zero context growth. Repeated skill invocations or reference reads can add copies to conversation history; host behavior and compaction determine what remains. Answers and tool output also accumulate normally. No controlled long-conversation token-growth test has been completed for the current version. Detailed findings and limits are in the [context review](tests/presentation/context-review.md).
 
-Earlier evaluations and reader feedback do not establish a general readability or accuracy gain. The current presentation rules follow the reader's preferences and have not been re-evaluated across models. See the [evaluation summary](tests/SUMMARY.md) and [why the core is optional](references/always-on-enforcement.md).
+Earlier evaluations and reader feedback do not establish a general readability or accuracy gain. The current presentation rules follow the reader's preferences; the reported follow-up lacks saved data for independent verification. See the [evaluation summary](tests/SUMMARY.md) and [why the core is optional](references/always-on-enforcement.md).
 
 ## Use
 

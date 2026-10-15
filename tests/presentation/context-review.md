@@ -7,7 +7,7 @@ Reviewed 2026-10-14. This is a source/mechanism review, not a long-conversation 
 | Component | Current size | Loading path |
 | --- | --- | --- |
 | Skill discovery metadata | Name, description, and host-supplied path | Available for skill selection; host controls representation. |
-| `SKILL.md` | 534 whitespace-separated words, 3,844 UTF-8 bytes | Full instructions when selected. |
+| `SKILL.md` | 535 whitespace-separated words, 3,846 UTF-8 bytes | Full instructions when selected. |
 | English core | 119 words, 769 bytes | Optional manual installation in persistent instructions. |
 | Chinese-explanation core | 160 words, 1,123 bytes | Alternative to English core; its instructions are also written in English. |
 | Highlighting reference | 544 words, 3,520 bytes | Linked for emphasis/color decisions, not supplied by a runtime hook. |
