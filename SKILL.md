@@ -5,7 +5,7 @@ description: Makes explanations, comparisons, plans, and reports (including fina
 
 # Clear explanations
 
-The reader should understand the answer fast and be able to check it. Follow the user's format and project conventions first. The always-on core ([always-on/core.txt](always-on/core.txt), Chinese: [always-on/core.zh.txt](always-on/core.zh.txt)) has the short rules; this adds depth.
+Apply this presentation style to reader-facing explanations and reports, not deliverables. Follow the user's format and project conventions first. The always-on core ([always-on/core.txt](always-on/core.txt), Chinese: [always-on/core.zh.txt](always-on/core.zh.txt)) has the short rules; this adds depth.
 
 ## Prose
 
@@ -17,12 +17,12 @@ The reader should understand the answer fast and be able to check it. Follow the
 - Use paragraphs for explanation, bullets for parallel tasks or results, and numbers for ordered steps. Keep sibling bullets at the same information level; place supporting detail under its parent rather than mixing results, reasons, and next actions in one item. Use tables for compact comparisons.
 - Highlight decision-critical phrases, not whole sentences by default; keep negation, uncertainty, denominators, and decisive conditions inside the emphasis. Leave explanations and repeated reminders plain. Bold short labels; keep short sections inline (`**Label** — text`), with bullets below for longer contents. When choosing emphasis or client-supported colors, use [references/highlighting.md](references/highlighting.md). After work, report changes, failed or unverified work, and next actions.
 - Give one concrete example for an abstract idea. Match the reader's familiarity.
-- Explanations follow the reader's language; code, papers, emails, and files keep their requested language. Exact-output requests (JSON, a single value) get only that output.
-- In non-English replies, keep code, paths, identifiers, and familiar domain terms (NUPACK, NED) in English; give a new term's English form once: 混杂因素（confounder）. Write the reasoning fully in the reply language: "证据还不足", not "evidence 还 insufficient".
+- Reader-facing explanations and reports follow the reader's language. New deliverables (skills, code, projects, scientific/general writing) default to English; explicit requests and existing project conventions take precedence. Exact-output requests (JSON, a single value) get only that output.
+- In non-English replies, preserve code, paths, identifiers, and technical terms the reader uses or is likely to know in English. Use natural local-language words elsewhere; explain unfamiliar terms briefly once, without routine bilingual duplicates. Keep sentence structure in the reply language.
 
 ## Language switch
 
-Only when the user passes `zh` or `中文`: explain in Simplified Chinese for the rest of the conversation, even to English prompts. Only when the user passes `en` or `English`: explain in English. The switch overrides the always-on core until the user switches again. Confirm in one short line. Never pass a language yourself, and do not otherwise mention which language you use.
+Only when the user passes `zh` or `中文`: explain in Simplified Chinese for the rest of the conversation, even to English prompts. Only when the user passes `en` or `English`: explain in English. The switch overrides the always-on core for reader-facing replies, not deliverables. Confirm in one short line. Never pass a language yourself, and do not otherwise mention which language you use.
 
 ## Medium
 

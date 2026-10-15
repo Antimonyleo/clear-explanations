@@ -15,6 +15,8 @@ One Chinese-native reader requested bold important messages, short bold labels, 
 
 On a later Chinese CUDA editing comparison, the reader said “B is better.” B placed the first action and recommendation earlier, separated backup options, moved background later, and removed a closing offer. It also replaced long table cells that the Rich preview truncated. This was one unblinded, untimed preference on combined changes; it does not isolate color, bold, ordering, or length effects. The retired CUDA packet is not shipped as technical advice.
 
+In a separate two-case terminology comparison, the reader preferred B: retain familiar English technical terms within natural Chinese sentences, avoiding routine bilingual duplicates. The reader specified that this affects explanations and reports only; new skills, code, projects, and scientific/general writing should default to English. The current skill and Chinese core reflect that scope, with explicit requests and existing project conventions taking precedence. This is reader preference, not a new cross-model result; the one-off comparison packet was retired after the decision.
+
 ## Current verification and limits
 
 The retained presentation suite has eight highlighting safeguard tests and a 96-condition Chinese/English layout audit. It verifies selection application and renderer fidelity, not automatic importance selection by a model. D implements the reader's preferred combination of grouping, emphasis, and parallel bullets; A/B/C remain fixed-wording controls.
