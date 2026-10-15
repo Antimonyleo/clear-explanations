@@ -1,0 +1,58 @@
+{
+  "zh": {
+    "D": [
+      {
+        "text": "验证还没有全部通过",
+        "role": "attention"
+      },
+      {
+        "text": "代码修改",
+        "role": "label"
+      },
+      {
+        "text": "测试结果",
+        "role": "label"
+      },
+      {
+        "text": "4 passed、1 error",
+        "role": "fact"
+      },
+      {
+        "text": "下一步",
+        "role": "label"
+      },
+      {
+        "text": "配置可用的测试服务",
+        "role": "action"
+      }
+    ]
+  },
+  "en": {
+    "D": [
+      {
+        "text": "verification is incomplete",
+        "role": "attention"
+      },
+      {
+        "text": "Code changes",
+        "role": "label"
+      },
+      {
+        "text": "Test results",
+        "role": "label"
+      },
+      {
+        "text": "4 passed, 1 error",
+        "role": "fact"
+      },
+      {
+        "text": "Next step",
+        "role": "label"
+      },
+      {
+        "text": "Configure an available test service",
+        "role": "action"
+      }
+    ]
+  }
+}

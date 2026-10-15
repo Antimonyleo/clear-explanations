@@ -1,0 +1,6 @@
+# Preview-only dependencies; the skill itself has no runtime dependency on them.
+rich==15.0.0
+wcwidth==0.9.2
+markdown-it-py==4.2.0
+mdurl==0.1.2
+pygments==2.21.0

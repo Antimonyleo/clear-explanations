@@ -1,0 +1,22 @@
+# Evaluation summary
+
+Release summary, 2026-10-14. Raw transcripts, logs, historical prompt variants, old evaluation harnesses, and one-off comparison packets were removed during release cleanup. This file preserves the conclusions, not an independently reproducible archive of those historical runs. No new model calls were made during cleanup.
+
+## Historical findings
+
+- An earlier frozen snapshot was exercised through native Codex GPT-6 Sol and Claude Sonnet 5.5 loading paths: 128 main task runs, 32 extra task runs, and eight three-turn language sessions. GPT-6.1 Sol remained a separate partial lane after infrastructure failures.
+- The recorded deterministic checks covered exact-output controls, independently checked code changes, read-only investigations, and language switching. Before cleanup, the saved-evidence audit passed 818 checks. This count is a historical evidence audit, not 818 behavioral tests of the current skill.
+- Codex retained more supplied checklist facts with instructions; Claude showed no clear core benefit. Ease changes were small and inconsistent. These results do not establish general readability improvement and refer to an older snapshot.
+- Later bilingual core experiments used Claude Sonnet and Opus with a Codex judge. Judge objections are not independently confirmed factual errors. Language changes confound some Chinese preferences. Failed shortening variants were rejected, and the reader-guided v6 core wording was retained.
+
+## Reader decisions
+
+One Chinese-native reader requested bold important messages, short bold labels, and bullets for parallel items at the same information level. These preferences are in the current skill and both optional cores. Important emphasis must include its negation, uncertainty, and decisive limits.
+
+On a later Chinese CUDA editing comparison, the reader said “B is better.” B placed the first action and recommendation earlier, separated backup options, moved background later, and removed a closing offer. It also replaced long table cells that the Rich preview truncated. This was one unblinded, untimed preference on combined changes; it does not isolate color, bold, ordering, or length effects. The retired CUDA packet is not shipped as technical advice.
+
+## Current verification and limits
+
+The retained presentation suite has eight highlighting safeguard tests and a 96-condition Chinese/English layout audit. It verifies selection application and renderer fidelity, not automatic importance selection by a model. D implements the reader's preferred combination of grouping, emphasis, and parallel bullets; A/B/C remain fixed-wording controls.
+
+The current skill/core wording has not undergone a new multi-model evaluation. Native interface contrast, fonts, clipboard behavior, controlled reading performance, and long-conversation token growth remain unverified. The [context review](presentation/context-review.md) found no repository-driven per-turn reminder or loading loop; repeated host invocations or reference reads can still add context.
