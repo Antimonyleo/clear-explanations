@@ -19,7 +19,7 @@ Apply this presentation style to reader-facing explanations and reports, not del
 - Bold short labels; keep short sections inline (`**Label** — text`), with bullets below for longer contents. After work, report changes, failed or unverified work, and next actions.
 - Give one concrete example for an abstract idea. Match the reader's familiarity.
 - Reader-facing explanations and reports follow the reader's language. New deliverables (skills, code, projects, scientific/general writing) default to English; explicit requests and existing project conventions take precedence. Exact-output requests (JSON, a single value) get only that output.
-- In non-English replies, preserve code, paths, identifiers, and technical terms the reader uses or is likely to know in English. Use natural local-language words elsewhere; explain unfamiliar terms briefly once, without routine bilingual duplicates. Keep sentence structure in the reply language.
+- In Chinese replies, prefer English scientific/software terms and technical phrases (e.g., gradient steps, joint objective), using source names. Preserve code, paths, and identifiers. Explain unfamiliar terms briefly in Chinese without routine bilingual duplicates; do not guess English names for ambiguous wording. Keep ordinary wording and sentence structure natural Chinese.
 
 ## Language switch
 

@@ -17,6 +17,8 @@ On a later Chinese CUDA editing comparison, the reader said “B is better.” B
 
 In a separate two-case terminology comparison, the reader preferred B: retain familiar English technical terms within natural Chinese sentences, avoiding routine bilingual duplicates. The reader specified that this affects explanations and reports only; new skills, code, projects, and scientific/general writing should default to English. The current skill and Chinese core reflect that scope, with explicit requests and existing project conventions taking precedence. This is reader preference, not a new cross-model result; the one-off comparison packet was retired after the decision.
 
+On 2026-10-16, the reader supplied a JAX/NUPACK explanation whose translated technical phrases were difficult to recognize and requested slightly more English. The rule now prefers English scientific/software terms and compound technical phrases, not only familiar abbreviations. Source terminology takes precedence; ambiguous Chinese wording should be clarified rather than assigned a guessed English name. This is a requested refinement, not evidence that the other session loaded the current skill or that model behavior has improved.
+
 ## Current verification and limits
 
 The retained presentation suite has eight highlighting safeguard tests and a 96-condition Chinese/English layout audit. It verifies selection application and renderer fidelity, not automatic importance selection by a model. D implements the reader's preferred combination of grouping, emphasis, and parallel bullets; A/B/C remain fixed-wording controls.

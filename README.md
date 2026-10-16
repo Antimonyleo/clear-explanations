@@ -49,7 +49,7 @@ Run this once, with only one language file. When updating, replace the existing 
 
 ### Context cost
 
-The core is a fixed instruction block: 119 words for English or 160 for Chinese explanations, both written in English. The skill entrypoint is 535 words including metadata. These are word counts, not tokenizer measurements. The skill does not install hooks, append reminders each turn, or automatically load the test results and terminal preview. Codex discovers a skill's name and description first and loads its full instructions when selected; see the [official skill documentation](https://learn.chatgpt.com/docs/build-skills). Codex builds its `AGENTS.md` instruction chain once per run; see [instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+The core is a fixed instruction block: 119 words for English or 166 for Chinese explanations, both written in English. The skill entrypoint is 543 words including metadata. These are word counts, not tokenizer measurements. The skill does not install hooks, append reminders each turn, or automatically load the test results and terminal preview. Codex discovers a skill's name and description first and loads its full instructions when selected; see the [official skill documentation](https://learn.chatgpt.com/docs/build-skills). Codex builds its `AGENTS.md` instruction chain once per run; see [instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
 This supports a small fixed instruction cost under normal loading, not a guarantee of zero context growth. Repeated skill invocations or reference reads can add copies to conversation history; host behavior and compaction determine what remains. Answers and tool output also accumulate normally. No controlled long-conversation token-growth test has been completed for the current version. Detailed findings and limits are in the [context review](tests/presentation/context-review.md).
 
@@ -61,7 +61,7 @@ Ask normally, or call it by name: `/clear-explanations` in Claude Code, `$clear-
 
 Switch the explanation language for the rest of a conversation: `/clear-explanations zh` or `/clear-explanations en` (Codex: `$clear-explanations zh` or `$clear-explanations en`).
 
-This changes reader-facing explanations and reports only. New skills, code, projects, and scientific/general writing default to English; explicit language requests and existing project conventions take precedence. Chinese replies retain familiar English technical terms without routinely adding both translations.
+This changes reader-facing explanations and reports only. New skills, code, projects, and scientific/general writing default to English; explicit language requests and existing project conventions take precedence. Chinese replies prefer English scientific/software terms and technical phrases, using source names, while keeping ordinary wording natural Chinese. Unfamiliar terms get brief explanations without routine bilingual duplicates.
 
 [Research and rationale](references/research.md)
 
